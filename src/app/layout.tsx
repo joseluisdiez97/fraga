@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Libre_Baskerville } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const libreBaskerville = Libre_Baskerville({
@@ -22,6 +23,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className="scroll-smooth">
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-REESYXXMXY"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-REESYXXMXY');
+          `}
+        </Script>
+      </head>
       <body
         className={`${libreBaskerville.variable} antialiased font-[family-name:var(--font-libre-baskerville)]`}
       >
