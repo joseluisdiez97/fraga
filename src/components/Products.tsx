@@ -36,18 +36,25 @@ function SizeModal({
     category.sizes[category.sizes.length - 1]
   );
   const [carouselIndex, setCarouselIndex] = useState(0);
+  const [customChar, setCustomChar] = useState("");
+
+  const needsChar = category.key === "letras" || category.key === "numeros";
 
   const images = category.images;
 
   const handleAdd = () => {
+    const sizeLabel = t("products.sizeLabel");
+    const charLabel = needsChar && customChar.trim() ? ` "${customChar.trim().toUpperCase()}"` : "";
+    const charId = needsChar && customChar.trim() ? `-${customChar.trim().toUpperCase()}` : "";
     addItem({
-      id: selectedSize.id,
-      name: `${category.label} ${selectedSize.size}`,
+      id: `${selectedSize.id}${charId}`,
+      name: `${category.label}${charLabel} (${sizeLabel}: ${selectedSize.size})`,
       price: selectedSize.priceNum,
       priceLabel: selectedSize.price,
       image: selectedSize.image,
     });
-    showToast(`${category.label} ${selectedSize.size} ${t("cart.addedToast")}`);
+    showToast(`${category.label}${charLabel} (${sizeLabel}: ${selectedSize.size}) ${t("cart.addedToast")}`);
+    if (needsChar) setCustomChar("");
   };
 
   const prevSlide = () =>
@@ -155,9 +162,34 @@ function SizeModal({
           <div className="bg-rose-50 rounded-xl p-3 text-center">
             <p className="text-xl font-bold text-rose-500">{selectedSize.price}</p>
             <p className="text-[10px] text-gray-500 mb-2">{selectedSize.servings}</p>
+
+            {/* Letter / Number input */}
+            {needsChar && (
+              <input
+                type="text"
+                maxLength={1}
+                value={customChar}
+                onChange={(e) => {
+                  const v = e.target.value;
+                  if (category.key === "numeros") {
+                    setCustomChar(v.replace(/[^0-9]/g, ""));
+                  } else {
+                    setCustomChar(v.replace(/[^a-zA-Z]/g, ""));
+                  }
+                }}
+                placeholder={category.key === "letras" ? t("products.enterLetter") : t("products.enterNumber")}
+                className="w-full mb-2 px-3 py-2 rounded-lg border-2 border-gray-200 text-sm text-center text-gray-700 focus:border-rose-500 focus:outline-none transition-colors uppercase"
+              />
+            )}
+
             <button
               onClick={handleAdd}
-              className="w-full px-4 py-2.5 bg-black hover:bg-rose-500 text-white text-xs font-semibold rounded-full transition-all duration-300 cursor-pointer"
+              disabled={needsChar && !customChar.trim()}
+              className={`w-full px-4 py-2.5 text-white text-xs font-semibold rounded-full transition-all duration-300 ${
+                needsChar && !customChar.trim()
+                  ? "bg-gray-300 cursor-not-allowed"
+                  : "bg-black hover:bg-rose-500 cursor-pointer"
+              }`}
             >
               {t("cart.added")}
             </button>
@@ -221,7 +253,7 @@ export default function Products() {
       key: "corazones",
       label: t("products.hearts"),
       description: t("products.desc.heart"),
-      image: "/corazones/corazon1.jpeg",
+      image: "/corazones/corazon.jpeg",
       images: ["/corazones/corazon.jpeg", "/corazones/corazon1.jpeg"],
       sizes: [
         {

@@ -31,6 +31,8 @@ const translations: Record<string, Record<Lang, string>> = {
   "products.hearts": { es: "Corazones", en: "Hearts" },
   "products.letters": { es: "Letras", en: "Letters" },
   "products.numbers": { es: "Números", en: "Numbers" },
+  "products.enterLetter": { es: "¿Qué letra?", en: "Which letter?" },
+  "products.enterNumber": { es: "¿Qué número?", en: "Which number?" },
   "products.rounds": { es: "Rounds", en: "Rounds" },
   "products.bites": { es: "Bites", en: "Bites" },
   "products.mini": { es: "Mini Pavlova", en: "Mini Pavlova" },
@@ -69,6 +71,7 @@ const translations: Record<string, Record<Lang, string>> = {
   },
   "products.order": { es: "Ordenar", en: "Order" },
   "products.chooseSize": { es: "Elegir tamaño", en: "Choose size" },
+  "products.sizeLabel": { es: "Tamaño", en: "Size" },
 
   // Orders
   "orders.title": { es: "Información de Pedidos", en: "Order Information" },
