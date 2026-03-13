@@ -221,7 +221,7 @@ export default function Products() {
       key: "corazones",
       label: t("products.hearts"),
       description: t("products.desc.heart"),
-      image: "/corazones/corazon.jpeg",
+      image: "/corazones/corazon1.jpeg",
       images: ["/corazones/corazon.jpeg", "/corazones/corazon1.jpeg"],
       sizes: [
         {
