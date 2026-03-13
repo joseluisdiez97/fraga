@@ -11,7 +11,14 @@ export default function CartDrawer() {
   const buildWhatsAppMessage = () => {
     let msg = `${t("cart.wa.greeting")}\n\n`;
     items.forEach((item) => {
-      msg += `• ${item.name} x${item.quantity} — $${(item.price * item.quantity).toFixed(2)}\n`;
+      const isBitesOrMini = item.id === "bites" || item.id === "mini-box";
+      if (isBitesOrMini) {
+        const innerQty = item.name.match(/×(\d+)/)?.[1] ?? "";
+        const displayName = item.name.replace(/\s*\(×\d+\)/, "");
+        msg += `• ${displayName} x${innerQty} — $${(item.price * item.quantity).toFixed(2)}\n`;
+      } else {
+        msg += `• ${item.name} x${item.quantity} — $${(item.price * item.quantity).toFixed(2)}\n`;
+      }
     });
     msg += `\n${t("cart.total")}: $${totalPrice.toFixed(2)}`;
     return encodeURIComponent(msg);
