@@ -11,7 +11,7 @@ export default function Hero() {
       {/* Background image */}
       <div className="absolute inset-0">
         <Image
-          src="/pavlova/pavlova.jpeg"
+          src="/pavlova/fondo.jpeg"
           alt="Fraga Pavlovas"
           fill
           priority
