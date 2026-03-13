@@ -34,7 +34,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   const showToast = useCallback((message: string) => {
     setToastMessage(message);
-    setTimeout(() => setToastMessage(null), 2500);
+    setTimeout(() => setToastMessage(null), 1200);
   }, []);
 
   const addItem = useCallback((newItem: Omit<CartItem, "quantity">) => {
