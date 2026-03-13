@@ -207,6 +207,14 @@ export default function Products() {
           servings: `${t("products.serves")} 13 - 16 ${t("products.portions")}`,
           image: "/pavlova/pavlova3.jpeg",
         },
+        {
+          id: "pavlova-14",
+          size: '14"',
+          price: "$130",
+          priceNum: 130,
+          servings: `${t("products.serves")} 18 - 22 ${t("products.portions")}`,
+          image: "/pavlova/pavlova4.jpeg",
+        },
       ],
     },
     {
@@ -252,8 +260,8 @@ export default function Products() {
         {
           id: "letter-12",
           size: '12"',
-          price: "$105",
-          priceNum: 105,
+          price: "$115",
+          priceNum: 115,
           servings: `${t("products.serves")} 13 - 16 ${t("products.portions")}`,
           image: "/letras/letraA.jpeg",
         },
