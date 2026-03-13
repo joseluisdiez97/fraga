@@ -18,7 +18,7 @@ const translations: Record<string, Record<Lang, string>> = {
   "nav.contact": { es: "Contacto", en: "Contact" },
 
   // Hero
-  "hero.title": { es: "Fraga Pavlovas", en: "Fraga Pavlovas" },
+  "hero.title": { es: "Gourmet Pavlovas en Nashville", en: "Gourmet Pavlovas in Nashville" },
   "hero.subtitle": {
     es: "Crujiente merengue, dulce de leche, crema suave y fresas frescas.",
     en: "Crispy meringue, dulce de leche, smooth cream and fresh strawberries.",
