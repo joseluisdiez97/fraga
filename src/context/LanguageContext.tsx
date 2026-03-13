@@ -27,6 +27,10 @@ const translations: Record<string, Record<Lang, string>> = {
 
   // Products
   "products.title": { es: "Nuestros Productos", en: "Our Products" },
+  "products.pavlovas": { es: "Pavlovas", en: "Pavlovas" },
+  "products.hearts": { es: "Corazones", en: "Hearts" },
+  "products.letters": { es: "Letras", en: "Letters" },
+  "products.numbers": { es: "Números", en: "Numbers" },
   "products.rounds": { es: "Rounds", en: "Rounds" },
   "products.bites": { es: "Bites", en: "Bites" },
   "products.mini": { es: "Mini Pavlova", en: "Mini Pavlova" },
@@ -35,7 +39,22 @@ const translations: Record<string, Record<Lang, string>> = {
   "products.each": { es: "cada uno", en: "each" },
   "products.minimum": { es: "Mínimo", en: "Minimum" },
   "products.pieces": { es: "piezas", en: "pieces" },
+  "products.bitesBox": { es: "Caja de 12 piezas", en: "Box of 12 pieces" },
+  "products.bitesMin": { es: "Mínimo 12 piezas", en: "Minimum 12 pieces" },
+  "products.quantity": { es: "Cantidad", en: "Quantity" },
   "products.box": { es: "Caja de 2 mini pavlovas", en: "Box of 2 mini pavlovas" },
+  "products.desc.heart": {
+    es: "Pavlova en forma de corazón, perfecta para ocasiones especiales. Merengue crujiente, dulce de leche, crema suave y fresas frescas.",
+    en: "Heart-shaped Pavlova, perfect for special occasions. Crispy meringue, dulce de leche, smooth cream and fresh strawberries.",
+  },
+  "products.desc.letter": {
+    es: "Pavlova en forma de letra, ideal para personalizar tu celebración. Merengue crujiente, dulce de leche, crema suave y fresas frescas.",
+    en: "Letter-shaped Pavlova, ideal for personalizing your celebration. Crispy meringue, dulce de leche, smooth cream and fresh strawberries.",
+  },
+  "products.desc.number": {
+    es: "Pavlova en forma de número, perfecta para cumpleaños y aniversarios. Merengue crujiente, dulce de leche, crema suave y fresas frescas.",
+    en: "Number-shaped Pavlova, perfect for birthdays and anniversaries. Crispy meringue, dulce de leche, smooth cream and fresh strawberries.",
+  },
   "products.desc.round": {
     es: "Una obra maestra de merengue crujiente, dulce de leche, crema suave y fresas frescas.",
     en: "A masterpiece of crispy meringue, dulce de leche, smooth cream and fresh strawberries.",
@@ -49,6 +68,7 @@ const translations: Record<string, Record<Lang, string>> = {
     en: "A mini masterpiece of crispy meringue, dulce de leche, smooth cream and fresh strawberries.",
   },
   "products.order": { es: "Ordenar", en: "Order" },
+  "products.chooseSize": { es: "Elegir tamaño", en: "Choose size" },
 
   // Orders
   "orders.title": { es: "Información de Pedidos", en: "Order Information" },
@@ -81,6 +101,7 @@ const translations: Record<string, Record<Lang, string>> = {
   "cart.zelle.label": { es: "Pagar con Zelle a:", en: "Pay with Zelle to:" },
   "cart.clear": { es: "Vaciar carrito", en: "Clear cart" },
   "cart.added": { es: "Añadir al carrito", en: "Add to cart" },
+  "cart.addedToast": { es: "añadido al carrito", en: "added to cart" },
   "cart.wa.greeting": { es: "¡Hola! Me gustaría hacer el siguiente pedido:", en: "Hi! I would like to place the following order:" },
   "cart.date": { es: "Fecha de entrega", en: "Delivery date" },
   "cart.date.placeholder": { es: "Selecciona una fecha", en: "Select a date" },
